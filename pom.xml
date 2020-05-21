@@ -1,20 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.ubs.training</groupId>
-  <artifactId>ubs-login-webapp</artifactId>
+  <groupId>com.jenkins.demo</groupId>
+  <artifactId>JenkinsWar1</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>ubs-login-webapp Maven Webapp</name>
+  <name>JenkinsWar Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  
-  <properties>
-    <sonar.projectKey>harikrishnan-scm-demo</sonar.projectKey>
-    <sonar.organization>harikrishnan-scm</sonar.organization>
-    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    <sonar.login>b30b636f101206fdd3f4d1cb7e34e344b2a3226a</sonar.login>
-  </properties>
-  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -24,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>ubs-login-webapp</finalName>
+    <finalName>JenkinsWar</finalName>
   </build>
 </project>
