@@ -19,6 +19,7 @@ pipeline {
             withMaven(jdk: 'jkd_8u252', maven: 'mvn_3.6.3') {
             sh 'mvn clean package'
             }
+            archiveArtifacts 'target/helloworld-1.1.jar'
          }
       }
    }
