@@ -4,3 +4,4 @@ cat /tmp/hari.txt
 ls -l
 hostname
 date
+free -m
