@@ -1,0 +1,26 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('welcome') {
+         steps {
+            echo 'welcome page'
+         }
+      }
+
+      stage('account creation') {
+         steps {
+            sh label: '', script: '''#!/bin/bash
+            var1=$username
+            var2=$password
+            var3=$server
+            ssh -tt -i /tmp/jenkins-passwordless-lle root@$server "user=$var1" "pass=$var2" "node=$var3" \'
+            useradd $user
+            echo $pass | passwd $user --stdin
+            echo " "
+            echo "User account $user added successfully on $node"
+            \''''
+         }
+      }
+   }
+}
