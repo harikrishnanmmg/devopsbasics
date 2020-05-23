@@ -7,21 +7,7 @@ pipeline {
             echo 'welcome page'
          }
       }
-
-      stage('account creation') {
-         steps {
-            sh label: '', script: '''#!/bin/bash
-            var1=$username
-            var2=$password
-            var3=$server
-            ssh -tt -i /tmp/jenkins-passwordless-lle root@$server "user=$var1" "pass=$var2" "node=$var3" \'
-            useradd $user
-            echo $pass | passwd $user --stdin
-            echo " "
-            echo "User account $user added successfully on $node"
-            \''''
-         }
-      }
+      
       stage('install tomcat') {
          steps {
             sh label: '', script: '''#!/bin/bash
@@ -33,6 +19,17 @@ pipeline {
             echo "HTTPD service has been installed"
             \''''
          }
-      }      
+      }
+
+      stage('install kernel') {
+         steps {
+            sh label: '', script: '''#!/bin/bash
+            ssh -tt -i /tmp/jenkins-passwordless-lle root@$server \'
+            yum install -y kernel
+            echo " "
+            \''''
+         }
+      }
+      
    }
 }
