@@ -22,5 +22,17 @@ pipeline {
             \''''
          }
       }
+      stage('install tomcat') {
+         steps {
+            sh label: '', script: '''#!/bin/bash
+            ssh -tt -i /tmp/jenkins-passwordless-lle root@$server \'
+            yum install -y httpd
+            systemctl enable httpd
+            systemctl start httpd
+            echo " "
+            echo "HTTPD service has been installed"
+            \''''
+         }
+      }      
    }
 }
